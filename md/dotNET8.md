@@ -1,4 +1,4 @@
-### Highlight New C# Features in .NET 8
+# Highlight New C# Features in .NET 8
 
 1. **.NET Core Libraries**
 
@@ -403,13 +403,16 @@
 9. **.NET on Linux**
    - Now targeting Ubuntu 16.04 for all architectures
    - You can now build .NET on Linux directly from the dotnet/dotnet repo
+   - [Learn More](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8#net-on-linux)
 
 1. **Cross-built Windows apps**
-   - test
    - Building apps that target Windows on a non-Windows platform will result in an executable with any specified Win32 resources--for example, application icon, manifest, version information
+   - [Learn More](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8#cross-built-windows-apps)
 
 1. **Code Analysis**
    - New code analyzers and fixers have been added to help verify you are using the .NET library APIs correctly and efficiently
+   - [Learn More](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8#code-analysis)
 
 1. **NuGet**
    - NuGet now verifies signed packages on Linux by default
+   - [Learn More](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8#nuget)

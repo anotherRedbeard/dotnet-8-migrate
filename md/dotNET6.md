@@ -1,10 +1,11 @@
-##Nullable Reference Types (NRT) & Top-Level Statements
+# Nullable Reference Types (NRT) & Top-Level Statements
 
 - **NRT (Nullable Reference Types)**
   - While nothing has really changed per se here, it's essential to understand that these are significant changes from .NET 6. Let's review them at a high level:
     - **Null State Analysis**
       - Variables are either not-null or maybe-null, which determines if they can be dereferenced or not.
       - Example:
+
         ```csharp
         string message = null;
         
@@ -20,8 +21,10 @@
         // warning! (maybe-null)
         Console.WriteLine(originalMessage.Length);
         ```
+
       - By default, null state analysis doesn't trace into methods, so it will always generate a warning unless you use 'Constructor Chaining' or 'Nullable Attributes' on the method.
       - Example with Nullable Attributes:
+
         ```csharp
         using System.Diagnostics.CodeAnalysis;
         
@@ -67,11 +70,14 @@
             }
         }
         ```
+
     - **Attributes on API Signatures**
       - Null state analysis needs hints from developers to understand the semantics of the APIs. Developers need to add certain attributes on the signatures to give the compiler hints. For example:
+
         ```csharp
         public static bool IsNullOrWhiteSpace([NotNullWhen(false)] string message);
         ```
+
     - **Nullable Variable Annotations**
       - The compiler needs more help from developers for member variables to determine if a reference can be null or may be null. This is done using nullable reference types. For example, you would declare `string? Name;` to tell the compiler that `Name` could be null.
       - To override the warning when you know a variable isn't null, you can use the null-forgiving operator `!` to force the null-state to be not-null. For example: `Name!.Length`
@@ -79,6 +85,7 @@
 
 - **Top-Level Statements**
   - This refers to how we can now remove the ceremony around the entry point into an app. We go from this:
+
     ```csharp
     using System;
     
@@ -93,11 +100,14 @@
         }
     }
     ```
+
     To this:
+
     ```csharp
     // See [here](https://aka.ms/new-console-template) for more information
     Console.WriteLine("Hello, World!");
     ```
+
   - Key Points:
     - Streamlined entry point to a program
     - Ideal for scripting and small utility programs
