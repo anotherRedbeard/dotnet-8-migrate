@@ -12,10 +12,39 @@
          - [Learn More](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/source-generation?pivots=dotnet-8-0)
       - Interface Hierarchies:
          - Support for serializing properties from interface hierarchies.
+
+         	```csharp
+            IDerived value = new DerivedImplement { Base = 0, Derived = 1 };
+            JsonSerializer.Serialize(value); // {"Base":0,"Derived":1}
+            
+            public interface IBase
+            {
+                  public int Base { get; set; }
+            }
+            
+            public interface IDerived : IBase
+            {
+                  public int Derived { get; set; }
+            }
+            
+            public class DerivedImplement : IDerived
+            {
+                  public int Base { get; set; }
+                  public int Derived { get; set; }
+            }
+            ```
+
       - Naming Policies:
          - Introduction of naming policies like snake_case and kebab-case for property name conversions.
+         
+         ```csharp
+         var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower };
+         JsonSerializer.Serialize(new { PropertyName = "value" }, options); // { "property_name" : "value" }
+         ```
+
       - Read-only Properties:
          - Deserialization support for read-only fields or properties. Can be opted into globally or granularly using attributes.
+
          ```csharp
          using System.Text.Json;
          CustomerInfo customer =

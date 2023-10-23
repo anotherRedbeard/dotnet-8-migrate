@@ -30,7 +30,7 @@ If you rely on a `global.json` file to target a specific .NET Core SDK version, 
 
 ### Update the target framework
 
-Update the .csproj file's Target Framework property to `net8.0`
+Update the .csproj file's Target Framework moniker to `net8.0`
 
 ```diff
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -61,3 +61,7 @@ You will want to look inside the .csproj for any references that need to be upda
 ```
 
 You can also update these versions by running the package restore command.  Something like this:  `dotnet add package Microsoft.AspNetCore.JsonPatch --version 8.0.0-rc.2.23479.6`
+
+## More Info
+
+You can [Learn More](https://learn.microsoft.com/en-us/aspnet/core/migration/70-80?view=aspnetcore-7.0&tabs=visual-studio) here by checking out the .NET documentation
