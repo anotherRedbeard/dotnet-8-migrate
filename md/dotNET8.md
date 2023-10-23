@@ -70,6 +70,49 @@
          - Option to disable reflection-based serialization by default.
       - New JsonNode API Methods:
          - Additional methods for working with JSON nodes and arrays.
+
+         ```csharp
+            public partial class JsonNode
+            {
+                  // Creates a deep clone of the current node and all its descendants.
+                  public JsonNode DeepClone();
+            
+                  // Returns true if the two nodes are equivalent JSON representations.
+                  public static bool DeepEquals(JsonNode? node1, JsonNode? node2);
+            
+                  // Determines the JsonValueKind of the current node.
+                  public JsonValueKind GetValueKind(JsonSerializerOptions options = null);
+            
+                  // If node is the value of a property in the parent
+                  // object, returns its name.
+                  // Throws InvalidOperationException otherwise.
+                  public string GetPropertyName();
+            
+                  // If node is the element of a parent JsonArray,
+                  // returns its index.
+                  // Throws InvalidOperationException otherwise.
+                  public int GetElementIndex();
+            
+                  // Replaces this instance with a new value,
+                  // updating the parent object/array accordingly.
+                  public void ReplaceWith<T>(T value);
+            
+                  // Asynchronously parses a stream as UTF-8 encoded data
+                  // representing a single JSON value into a JsonNode.
+                  public static Task<JsonNode?> ParseAsync(
+                     Stream utf8Json,
+                     JsonNodeOptions? nodeOptions = null,
+                     JsonDocumentOptions documentOptions = default,
+                     CancellationToken cancellationToken = default);
+            }
+            
+            public partial class JsonArray
+            {
+                  // Returns an IEnumerable<T> view of the current array.
+                  public IEnumerable<T> GetValues<T>();
+            }
+         ```
+
       - Non-Public Members:
          - Option to include non-public members in the serialization contract.
          ```csharp

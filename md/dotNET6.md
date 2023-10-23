@@ -81,6 +81,7 @@
     - **Nullable Variable Annotations**
       - The compiler needs more help from developers for member variables to determine if a reference can be null or may be null. This is done using nullable reference types. For example, you would declare `string? Name;` to tell the compiler that `Name` could be null.
       - To override the warning when you know a variable isn't null, you can use the null-forgiving operator `!` to force the null-state to be not-null. For example: `Name!.Length`
+  - When debugging Null warnings [this](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings) is a helpful resource document.
   - For more information, visit [here](https://learn.microsoft.com/en-us/dotnet/csharp/nullable-references).
 
 - **Top-Level Statements**

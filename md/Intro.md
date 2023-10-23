@@ -6,6 +6,7 @@
   3. **Breaking Changes**
 
 ## Importance of Staying Up-to-Date with .NET Versions
+
 - The release date is set for 11/14/23 at .NET Conf 2023 to celebrate the release.
   - [Read more](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-rc1/)
 
@@ -13,7 +14,7 @@
   - Discuss how .NET Framework and .NET Core merged into just .NET.
   - Simplifying the landscape by starting with .NET 5.
     - .NET Standard serves as a bridge across framework and core to maintain historical compatibility.
-    - ASP.NET Core points to .NET 5 and greater, while ASP.NET refers to .NET Framework versions.
+    - ASP.NET Core refers to apps that are built on .NET 5 and greater, while ASP.NET refers to .NET Framework versions.
 
 - Benefits of .NET Core:
   - Highlight the advantages:
