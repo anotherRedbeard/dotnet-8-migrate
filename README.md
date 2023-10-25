@@ -2,13 +2,19 @@
 
 Welcome to the .NET 8 Migration Guide repository! This repository contains essential information and guides to help you migrate your projects from .NET Core 6/7 to .NET 8.
 
+## Presentations
+
+Any power point presentations will be stored in the `presentations` directory of this repo.  This has an outline of the educational material to go over for the new features of .NET 8.
+
+To access these files, navigate to the `presentations` directory:  [presentations](./presentations/).
+
 ## Markdown Files
 
 The detailed migration guides and documentation are organized in Markdown format and located in the `md` directory of this repository. You can find various topics and instructions for your migration process there.
 
 To access the specific migration guides, navigate to the `md` directory: [md](./md).
 
-## Table of Contents
+### Table of Contents
 
 Here's a list of available migration topics:
 
